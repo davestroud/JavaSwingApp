@@ -1,3 +1,5 @@
+// MainFrame acts as a controller
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,8 +23,10 @@ public class MainFrame extends JFrame {
 		toolbar = new ToolBar();
 		textPanel = new TextPanel();
 		btn = new JButton("Click Me!");
-		btn.addActionListener(new ActionListener() {
+		
+		toolbar.setTextPanel(textPanel);
 
+		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textPanel.appendText("Hello\n");
 			}
