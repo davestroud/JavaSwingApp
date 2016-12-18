@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 public class ToolBar extends JPanel implements ActionListener {
 	private JButton helloButton;
 	private JButton goodbyeButton;
+	private TextPanel textPanel;
 
 	public ToolBar() {
 		helloButton = new JButton("Hello");
@@ -23,13 +24,18 @@ public class ToolBar extends JPanel implements ActionListener {
 	}
 
 	public void setTextPanel(TextPanel textPanel) {
+		this.textPanel = textPanel;
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("A button has been clicked");
+		JButton clicked = (JButton) e.getSource();
 
+		if (clicked == helloButton) {
+			textPanel.appendText("Hello\n");
+		} else {
+			textPanel.appendText("Goodbye\n");
+		}
 	}
-
 }
