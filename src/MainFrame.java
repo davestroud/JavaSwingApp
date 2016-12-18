@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
 		btn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
-				// textArea.append("Hello\n");
+				textPanel.appendText("Hello\n");
 			}
 		});
 
