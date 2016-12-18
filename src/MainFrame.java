@@ -12,15 +12,15 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private TextPanel textPanel;
 	private JButton btn;
+	private ToolBar toolbar;
 
 	public MainFrame() {
 		super("Hello David");
-
 		setLayout(new BorderLayout());
 
+		toolbar = new ToolBar();
 		textPanel = new TextPanel();
 		btn = new JButton("Click Me!");
-
 		btn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
@@ -28,9 +28,9 @@ public class MainFrame extends JFrame {
 			}
 		});
 
+		add(toolbar, BorderLayout.NORTH);
 		add(textPanel, BorderLayout.CENTER);
 		add(btn, BorderLayout.SOUTH);
-
 		setSize(600, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
